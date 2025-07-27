@@ -1,0 +1,10 @@
+.star::after {
+  top: 90%;
+  left: 53%;
+  background-color: white;
+}
+.star::before {
+  top: 90%;
+  right: 49%;
+  background-color: white;
+}

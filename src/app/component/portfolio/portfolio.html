@@ -1,0 +1,48 @@
+<section class="min-vh-100">
+  <div class="text-center">
+    <div class="pt-4 position-relative">
+      <h1 class="">Portfolio Component</h1>
+      <span>
+        <i class="fa-solid fa-star rotating-star"></i>
+      </span>
+      <div class="star"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row g-5 pt-5">
+      @for (image of images; track $index) {
+      <div class="col-md-4 pb-2">
+        <div
+          class="position-relative"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <img [src]="image" class="w-100 rounded-2 g-5 gap-4" alt="" />
+          <div class="layer rounded-2 top-0 h-100 w-100 position-absolute">
+            <span (click)="imageM = image"
+              ><i
+                class="text-white fa-solid fa-plus fa-6x position-absolute plus"
+              ></i
+            ></span>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!--todo== Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content">
+      <img [src]="imageM" class="w-100 h-100 img-fluid" alt="" />
+    </div>
+  </div>
+</div>
